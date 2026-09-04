@@ -1,3 +1,5 @@
+DOWNLOAD: https://github.com/Cuhbubba/Desmos-Desktop-/releases/latest/download/DesmosDesktop-mac.zip 
+
 # Desmos Desktop (macOS)
 
 A floating Desmos graphing/scientific calculator that sits infront of every window (full screen apps too).
@@ -9,7 +11,7 @@ Use the (X) close out button to hide the app, but have it be able to be pulled b
 
 ## Install
 
-1. Download **`DesmosDesktop-mac.zip`**  and unzip it.
+1. Download **`DesmosDesktop-mac.zip`** (https://github.com/Cuhbubba/Desmos-Desktop-/releases/latest/download/DesmosDesktop-mac.zip)  and unzip it.
 2. Drag **Desmos Desktop.app** into your **Applications** folder.
 3. Open it once. Because this is a free, unsigned app (not notarized with Apple), macOS will
    block the first launch. Do **one** of the following:
