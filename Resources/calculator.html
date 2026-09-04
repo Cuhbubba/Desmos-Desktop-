@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #fff;
+               font-family: -apple-system, system-ui, sans-serif; }
+  .calc { position: absolute; inset: 0; }
+  .hidden { display: none; }
+  #error { position: absolute; inset: 0; display: none; align-items: center; justify-content: center;
+           text-align: center; color: #444; padding: 24px; line-height: 1.5; }
+</style>
+<script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=4da7cae009cb4914bf18e67e98acfc86"></script>
+</head>
+<body>
+  <div id="graphing" class="calc"></div>
+  <div id="scientific" class="calc hidden"></div>
+  <div id="error">Couldn't load Desmos.<br>Check your internet connection, then use "Reload Calculator" from the menu bar icon.</div>
+<script>
+(function () {
+  if (typeof Desmos === 'undefined') {
+    document.getElementById('error').style.display = 'flex';
+    return;
+  }
+
+  var graphing = Desmos.GraphingCalculator(document.getElementById('graphing'), {
+    keypad: true,
+    graphpaper: true,
+    expressions: true,
+    settingsMenu: true,
+    zoomButtons: true,
+    expressionsTopbar: true,
+    pointsOfInterest: true,
+    trace: true,
+    border: false,
+    lockViewport: false,
+    expressionsCollapsed: false,
+    images: false,
+    folders: false,
+    notes: false,
+    sliders: true,
+    links: false,
+    qwertyKeyboard: true,
+    degreeMode: false,
+    showResetButtonOnGraphpaper: true
+  });
+
+  var scientific = Desmos.ScientificCalculator(document.getElementById('scientific'), {
+    border: false,
+    qwertyKeyboard: true,
+    degreeMode: false
+  });
+
+  var current = 'graphing';
+  var els = { graphing: document.getElementById('graphing'),
+              scientific: document.getElementById('scientific') };
+  var calcs = { graphing: graphing, scientific: scientific };
+
+  window.showMode = function (mode) {
+    if (!calcs[mode] || mode === current) return;
+    els[current].classList.add('hidden');
+    els[mode].classList.remove('hidden');
+    current = mode;
+    calcs[mode].resize();
+    // put the caret in the first expression so typing works right away
+    try { calcs[mode].focusFirstExpression(); } catch (e) {}
+  };
+
+  window.addEventListener('resize', function () { calcs[current].resize(); });
+})();
+</script>
+</body>
+</html>

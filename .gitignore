@@ -1,0 +1,6 @@
+# build output — distributed via GitHub Releases, not committed
+Desmos Desktop.app/
+DesmosDesktop-mac.zip
+build/
+AppIcon.iconset/
+.DS_Store
