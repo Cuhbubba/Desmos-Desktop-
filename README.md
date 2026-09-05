@@ -1,4 +1,4 @@
-DOWNLOAD: DesmosDesktop-mac.zip 
+DOWNLOAD: [DesmosDesktop-mac.zip ](https://github.com/Cuhbubba/Desmos-Desktop-/releases/tag/v.1.0)
 
 # Desmos Desktop (macOS)
 
@@ -11,7 +11,7 @@ Use the (X) close out button to hide the app, but have it be able to be pulled b
 
 ## Install
 
-1. Download **`DesmosDesktop-mac.zip`** (DesmosDesktop-mac.zip)  and unzip it.
+1. Download **`DesmosDesktop-mac.zip`** [(DesmosDesktop-mac.zip)](https://github.com/Cuhbubba/Desmos-Desktop-/releases/tag/v.1.0)  and unzip it.
 2. Drag **Desmos Desktop.app** into your **Applications** folder.
 3. Open it once. Because this is a free, unsigned app (not notarized with Apple), macOS will
    block the first launch. Do **one** of the following:
